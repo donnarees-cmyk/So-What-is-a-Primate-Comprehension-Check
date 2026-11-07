@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>So What Is a Primate? · Comprehension Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6eedb; --paper2:#efe3c6; --ink:#2f2a22; --muted:#6b5f4b;
+  --green:#3f6b3a; --green-d:#2c4d29; --kraft:#b98a55; --kraft-d:#8a6236;
+  --blue:#2f6db5; --card:#fffaf0; --good:#2e8b3e; --goodbg:#e3f4e1; --bad:#c2412d; --badbg:#fbe4df; --hl:#fff1a8;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);background-image:repeating-linear-gradient(0deg,transparent 0 33px,rgba(120,100,60,.08) 33px 34px);
+  color:var(--ink);font-family:'Lexend',system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-tap-highlight-color:transparent;padding-bottom:40px}
+header{background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;text-align:center;padding:16px 16px 22px;border-bottom:6px dashed var(--kraft)}
+.logo{max-width:200px;width:50%;display:block;margin:0 auto 8px;background:#fff;border-radius:14px;padding:6px}
+.tag{display:inline-block;font-family:'Kalam',cursive;background:var(--kraft);border-radius:999px;padding:2px 14px;font-size:15px}
+h1{font-family:'Kalam',cursive;font-size:2.2rem;line-height:1.1;margin:8px 0 2px}
+.sub{opacity:.9;font-size:.95rem}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.std{margin:16px 0 0;background:var(--card);border:2px dashed var(--kraft);border-radius:12px;padding:8px 14px;font-size:.8rem;color:var(--muted);line-height:1.45}
+.std b{color:var(--green-d)}
+.steps{display:flex;gap:4px;margin:16px 0 6px}
+.steps i{flex:1;height:10px;border-radius:99px;background:var(--paper2)}
+.steps i.done{background:#7fb35a}.steps i.now{background:var(--green)}
+.where{font-size:.85rem;color:var(--muted);text-align:center;margin-bottom:8px}
+.card{background:var(--card);border:3px solid var(--kraft);border-radius:22px;box-shadow:5px 5px 0 var(--kraft);padding:20px;margin:8px 0 18px}
+.card h2{font-family:'Kalam',cursive;color:var(--green-d);font-size:1.8rem;margin:0 0 6px;line-height:1.2}
+.btn{font-family:'Lexend',sans-serif;border:none;border-radius:14px;min-height:52px;padding:0 18px;font-size:1rem;font-weight:600;cursor:pointer;background:var(--paper2);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn:active{transform:scale(.97)}
+.btn.go{background:var(--green);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.sm{min-height:44px;padding:0 14px;font-size:.95rem}
+.btn.hear{background:#e8f1fb;color:var(--blue)}
+.btn.look{background:#fff6cf;color:#7a5a00}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:8px}
+.qlab{font-family:'Kalam',cursive;color:var(--kraft-d);font-size:1.2rem;font-weight:700}
+.skill{font-size:.75rem;background:var(--paper2);border-radius:99px;padding:2px 10px;color:var(--muted);margin-left:6px;font-family:'Lexend',sans-serif;font-weight:500}
+.qtext{font-weight:600;margin:6px 0 12px;font-size:1.1rem}
+.quote{background:#fff6cf;border-left:6px solid #e6b800;border-radius:10px;padding:10px 14px;margin:8px 0 12px;font-style:italic}
+.parta{background:#eef5e6;border:2px solid #b9d3a8;border-radius:12px;padding:10px 14px;margin-bottom:10px;font-size:.95rem}
+.opts{display:grid;gap:10px}
+.opt{font-family:'Lexend',sans-serif;text-align:left;font-size:1.02rem;background:#fff;border:3px solid var(--paper2);border-radius:14px;padding:12px 14px;cursor:pointer;color:var(--ink);display:flex;gap:10px;align-items:flex-start;min-height:52px;line-height:1.45}
+.opt .l{flex:none;width:30px;height:30px;border-radius:50%;background:var(--paper2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
+.opt:hover:not(:disabled){border-color:var(--kraft)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--good);background:var(--goodbg)}.opt.right .l{background:var(--good);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}.opt.wrong .l{background:var(--bad);color:#fff}
+.fb{display:none;margin-top:12px;border-radius:14px;padding:12px 14px;line-height:1.5}
+.fb.show{display:block}.fb.good{background:var(--goodbg);border:2px solid var(--good)}.fb.bad{background:var(--badbg);border:2px solid var(--bad)}
+.tipbox{background:#fbeee0;border-left:6px solid var(--kraft);border-radius:12px;padding:12px 14px;margin:12px 0}
+.stars{font-size:2.6rem;text-align:center;letter-spacing:4px;margin:6px 0}
+.score{text-align:center;font-size:1.4rem;font-weight:700}
+.miss{background:#fff;border:2px solid var(--paper2);border-radius:12px;padding:10px 12px;margin:8px 0;font-size:.95rem;line-height:1.45}
+.miss b{color:var(--good)}
+/* article drawer */
+.drawer{position:fixed;inset:0;background:rgba(30,40,25,.55);z-index:40;display:none}
+.drawer.show{display:block}
+.sheet{position:absolute;left:0;right:0;bottom:0;top:6vh;max-width:820px;margin:0 auto;background:var(--paper);border-radius:22px 22px 0 0;border-top:6px solid var(--green);display:flex;flex-direction:column}
+.sheet-top{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:2px dashed var(--kraft)}
+.sheet-top b{font-family:'Kalam',cursive;font-size:1.4rem;color:var(--green-d)}
+.article{overflow-y:auto;padding:8px 16px 40px;-webkit-overflow-scrolling:touch}
+.article h3{font-family:'Kalam',cursive;color:var(--green-d);margin:18px 0 2px;font-size:1.3rem}
+.ap{position:relative;padding:8px 8px 8px 44px;border-radius:12px;margin:6px 0;transition:background .3s}
+.ap.hl{background:var(--hl);box-shadow:0 0 0 3px #f2c200}
+.ap .n{position:absolute;left:6px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--kraft);color:#fff;font-size:.8rem;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ap .rd{display:inline-flex;margin-left:6px;border:none;background:#e8f1fb;color:var(--blue);border-radius:99px;font-size:.8rem;padding:2px 10px;cursor:pointer;font-family:'Lexend',sans-serif;vertical-align:middle}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:10px}
+@media (max-width:520px){body{font-size:17px}h1{font-size:1.9rem}.card{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="logo.png" alt="The Literacy Locksmith" onerror="this.style.display='none'">
+  <span class="tag">🔍 Comprehension Check · Unit 2</span>
+  <h1>So What Is a Primate?</h1>
+  <div class="sub">by Faith Hickman Brynie</div>
+</header>
+
+<div class="wrap">
+  <div class="std">
+    <b>ELA.6.R.2.1</b> Explain how text structures and/or features contribute to the author’s purpose.<br>
+    <b>ELA.6.R.2.2</b> Analyze how the central idea(s) develop over the course of a text.<br>
+    <b>ELA.K12.EE.1.1</b> Cite evidence to explain and justify reasoning.
+  </div>
+  <div class="steps" id="steps"></div>
+  <div class="where" id="where"></div>
+  <div id="stage"></div>
+  <footer>Comprehension check by Mrs. Rees</footer>
+</div>
+
+<div class="drawer" id="drawer"><div class="sheet">
+  <div class="sheet-top"><b>📖 The Article</b><button class="btn sm go" id="closeArt">Back to Question ✕</button></div>
+  <div class="article" id="article"></div>
+</div></div>
+
+<canvas id="confetti"></canvas>
+
+<script>
+/* ================= ARTICLE ================= */
+const DOC=[
+ {h:"Background"},
+ {p:"B",t:"Much of what we know about primates we owe to the scientists who have studied them. Some of these scientists, known as primatologists, study primates in their natural habitat. Others study primates in labs, in part to find out more about their biological traits. This article addresses some of the similarities and differences in traits among the members of this group of mammals."},
+ {h:"Introduction"},
+ {p:1,t:"Just as cats, lizards, birds, spiders, and fish are all members of the animal kingdom, so are people. We humans like to think of ourselves as special, and in many ways we are. However, we also have a great deal in common with other animals. As a science writer, I’m fascinated by these similarities and differences and seek to understand them more deeply. The more we know about our kinship with all animals, the better guardians of our planet we will be."},
+ {h:"So What Is a Primate?"},
+ {p:2,t:"What do you have in common with the aye-aye, sifaka, siamang, and potto? If you said your collarbone, you’re probably a primatologist—a person who studies primates. If you’re not, read on."},
+ {p:3,t:"Just like those animals with the weird names, you belong to the group of mammals called primates. (By the way, the group also includes the more commonly known monkeys, chimps, and gorillas.) Among other things, it’s the structure of your shoulder that earns you membership in that club. In primates, the upper arms are linked to the chest by the collarbone (also called the clavicle). That construction allows you and other primates to do something most mammals can’t: hang by your arms. Watch kids crossing a jungle gym hand-over-hand. They share that ability with monkeys and apes, but don’t expect rabbits, goats, or polar bears to perform such a feat!"},
+ {p:4,t:"The ability to swing isn’t the only adaptation to life in the trees, where most primates live. Eyes face forward, encased in bony sockets. That lets the view from one eye overlap the other. The result is three-dimensional or stereoscopic vision—the perfect tool for judging both depth and distance."},
+ {p:5,t:"Primates have agile arms and legs. Apes have no tails, but monkeys use their long, flexible tails for balance. Many New World monkeys have prehensile tails that wrap around branches and act as an extra hand or foot. Some can support their entire weight using only their tails."},
+ {p:6,t:"Primate fingers are flexible with sensitive ends, giving them a keen sense of touch. Except for marmosets and tamarins, all primates have flat fingernails and toenails instead of claws. Many primates, like humans, have a thumb that can bend to meet the other fingers or toes. This opposable thumb makes grasping small objects easy and paves the way for using and making tools. Tool use is aided by another very special primate feature—a large brain in relation to body size."},
+ {p:7,t:"Many primates, especially those that are diurnal (active during the day), live in social groups. Some of the smaller, nocturnal (active at night) primates live alone. Like all mammals, primates have hair or fur. They nurse their young with milk from mammary glands. Compared to other mammals, however, primates have few offspring, and the babies take a long time to mature."},
+ {p:8,t:"That growth and maturation varies greatly among species. The largest primate, the lowland gorilla, can achieve an adult weight of up to about 500 pounds. The smallest, the pygmy mouse lemur of Madagascar, tips the scales at about one ounce when fully grown."},
+ {p:9,t:"Scientists group the more than 200 living species of primates into two main categories. The first are the prosimians, or “primitive” primates. This group includes lemurs, pottos, lorises, and tarsiers. Mostly, the prosimians are small in size. They have long whiskers and pointed snouts. Their senses of hearing and smell are keen. They have moist noses and mobile ears. Many are nocturnal and have only black-and-white vision."},
+ {p:10,t:"The second group is the anthropoids, which contains nearly three times as many species as the prosimians. Anthropoids include monkeys, marmosets, tamarins, siamangs, and gibbons."},
+ {p:11,t:"The “Great Apes” are another major group of anthropoids. That group includes our closest cousins, the gorilla, chimpanzee, orangutan, and bonobo. (Recently, many scientists have also started to classify humans as a fifth species of great ape.) Most anthropoids have flat faces, keen color vision, and a relatively poor sense of smell. Anthropoids are intelligent and quick to learn. Many use and make tools and set up social systems."},
+ {p:12,t:"Where’s the single best place to find one-quarter of primate species? On the “Red List” of critically endangered, or vulnerable, species published by the International Union for Conservation of Nature and Natural Resources (IUCN). Today’s world is a dangerous place for primates, and when we lose them, we’ll lose these amazing creatures—including our closest cousins—forever."},
+ {p:13,t:"One of the most dangerous areas for the world’s primates is Madagascar. Some species of forest-dwelling lemurs found there live nowhere else in the world, but their homes are nearly all gone. Between 1950 and 1985 (say researchers at American University in Washington, D.C.), half of all Madagascar’s forests disappeared, as people cut the trees to grow coffee, mine the earth, and raise cattle. Between 1990 and 1995, the island continued to lose nearly 320 acres of its forest land annually, according to estimates from the World Resources Institute."}
+];
+
+/* ================= QUESTIONS ================= */
+/* p = paragraph(s) to look back at; part: 'A'/'B' for two-part items */
+const Q=[
+ {skill:"Central Idea", p:[1,12],
+  t:"Which statement BEST describes the central idea of the article?",
+  o:["Primates are the largest and strongest mammals on Earth.",
+     "Primates, including humans, share special body features and behaviors, and many primates are now in danger.",
+     "Scientists can only learn about primates by studying them in labs.",
+     "Madagascar is the best place in the world to see primates in the wild."], a:1,
+  ex:"Most of the article explains the traits primates share (collarbones, forward-facing eyes, opposable thumbs, large brains). The ending adds that many primates are endangered. Choice B covers the whole article."},
+ {skill:"Part A · Key Details", part:"A", p:[3],
+  t:"According to paragraph 3, what body feature allows primates to hang by their arms?",
+  o:["Their long, flexible tails","Their flat fingernails","Their collarbone, which links the upper arms to the chest","Their forward-facing eyes"], a:2,
+  ex:"Paragraph 3 says the upper arms are linked to the chest by the collarbone, and “that construction allows you and other primates to… hang by your arms.”"},
+ {skill:"Part B · Text Evidence", part:"B", p:[3],
+  t:"Which sentence from paragraph 3 BEST supports your answer to Part A?",
+  o:["“Watch kids crossing a jungle gym hand-over-hand.”",
+     "“(By the way, the group also includes the more commonly known monkeys, chimps, and gorillas.)”",
+     "“Just like those animals with the weird names, you belong to the group of mammals called primates.”",
+     "“In primates, the upper arms are linked to the chest by the collarbone (also called the clavicle).”"], a:3,
+  ex:"This sentence directly names the collarbone and explains how it connects the arms to the chest. The jungle gym sentence is an example, but it does not explain WHY primates can hang."},
+ {skill:"Key Details", p:[4],
+  t:"According to paragraph 4, how do forward-facing eyes help primates that live in trees?",
+  o:["They let primates see in the dark.","They give primates stereoscopic vision for judging depth and distance.","They protect primates’ eyes from branches.","They help primates see only in black and white."], a:1,
+  ex:"Paragraph 4 explains that when the view from each eye overlaps, primates get “stereoscopic vision—the perfect tool for judging both depth and distance.” That helps when leaping between branches!"},
+ {skill:"Author’s Craft", p:[2],
+  t:"Why does the author begin paragraph 2 with the question “What do you have in common with the aye-aye, sifaka, siamang, and potto?”",
+  o:["To hook the reader and show that the reader is connected to these animals",
+     "To prove that the reader is a primatologist",
+     "To list every animal that lives in Madagascar",
+     "To explain how scientists name new animals"], a:0,
+  ex:"Starting with a surprising question grabs the reader’s interest. The answer (your collarbone!) shows that YOU are a primate, too."},
+ {skill:"Key Details", p:[6,7],
+  t:"Which of these is NOT a primate trait described in the article?",
+  o:["A large brain in relation to body size","Few babies that take a long time to mature","Sharp claws on all fingers and toes","A thumb that can bend to meet the other fingers"], a:2,
+  ex:"Paragraph 6 says that except for marmosets and tamarins, primates have flat fingernails and toenails instead of claws."},
+ {skill:"Purpose of Details", p:[8],
+  t:"Why does the author compare the lowland gorilla (about 500 pounds) to the pygmy mouse lemur (about one ounce) in paragraph 8?",
+  o:["To show how greatly primates can vary in size","To prove that gorillas are dangerous","To explain why lemurs live alone","To show that all primates grow at the same speed"], a:0,
+  ex:"Paragraph 8 begins, “That growth and maturation varies greatly among species.” The two examples, one huge and one tiny, show just how much primates vary."},
+ {skill:"Text Structure", p:[9,10,11],
+  t:"How are paragraphs 9–11 mainly organized?",
+  o:["In time order, from oldest primates to newest",
+     "As a problem and its solution",
+     "As a story told from a primate’s point of view",
+     "By classification: the author sorts primates into groups and describes the traits of each group"], a:3,
+  ex:"Paragraph 9 says scientists group primates into “two main categories.” The author then describes prosimians and anthropoids (including the Great Apes). That is a classification / compare-and-contrast structure."},
+ {skill:"Compare & Contrast", p:[9,11],
+  t:"How are prosimians DIFFERENT from most anthropoids?",
+  o:["Prosimians have keen color vision, and anthropoids see only black and white.",
+     "Prosimians have keen senses of hearing and smell, while most anthropoids have keen color vision and a poorer sense of smell.",
+     "Prosimians use tools, and anthropoids never do.",
+     "Prosimians are much larger than anthropoids."], a:1,
+  ex:"Paragraph 9 says prosimians’ “senses of hearing and smell are keen” and many have black-and-white vision. Paragraph 11 says most anthropoids have “keen color vision, and a relatively poor sense of smell.”"},
+ {skill:"Central Idea Development", p:[12,13],
+  t:"How do paragraphs 12 and 13 develop the article’s central idea?",
+  o:["They give more details about primates’ fingers and thumbs.",
+     "They explain how to tell a monkey from an ape.",
+     "They shift from describing primate traits to warning that many primates are in danger.",
+     "They tell the story of how the author became a scientist."], a:2,
+  ex:"Up to paragraph 11, the author describes what primates are like. In paragraphs 12–13, the focus shifts to the threats primates face, like the “Red List” and forest loss in Madagascar."},
+ {skill:"Part A · Cause & Effect", part:"A", p:[13],
+  t:"According to paragraph 13, why are many lemurs in Madagascar in danger?",
+  o:["Their forest homes are being destroyed.","They are being hunted by gorillas.","The weather in Madagascar is getting colder.","They are moving to other countries."], a:0,
+  ex:"Paragraph 13 says the lemurs live nowhere else in the world, “but their homes are nearly all gone.”"},
+ {skill:"Part B · Text Evidence", part:"B", p:[13],
+  t:"Which detail from paragraph 13 BEST supports your answer to Part A?",
+  o:["“One of the most dangerous areas for the world’s primates is Madagascar.”",
+     "“…say researchers at American University in Washington, D.C.…”",
+     "“…half of all Madagascar’s forests disappeared, as people cut the trees to grow coffee, mine the earth, and raise cattle.”",
+     "“Some species of forest-dwelling lemurs found there live nowhere else in the world…”"], a:2,
+  ex:"This detail gives the cause: people cut down half the forests to grow coffee, mine, and raise cattle. That is WHY the lemurs’ homes are disappearing."},
+ {skill:"Author’s Purpose", p:[13],
+  t:"Why does the author include information about forests in an article about primates?",
+  o:["To teach readers how to grow coffee","To show that losing their habitat is a major threat to primates","To describe the different kinds of trees in Madagascar","To explain why primates have prehensile tails"], a:1,
+  ex:"Most primates live in trees. When forests disappear, primates lose their homes. The forest details support the point that primates are in danger."},
+ {skill:"Author’s Perspective", p:[1,12],
+  t:"Which sentence BEST shows the author’s belief that people should protect animals?",
+  o:["“Watch kids crossing a jungle gym hand-over-hand.”",
+     "“Primates have agile arms and legs.”",
+     "“Scientists group the more than 200 living species of primates into two main categories.”",
+     "“The more we know about our kinship with all animals, the better guardians of our planet we will be.”"], a:3,
+  ex:"A guardian is a protector. The author believes that learning about our connection to animals will help us protect the planet. The other choices are just facts."}
+];
+
+/* ================= STATE ================= */
+const KEY='rees-primate-comp-v1';
+let S={step:0,ans:{},celebrated:false};
+try{const d=JSON.parse(localStorage.getItem(KEY)); if(d&&typeof d.step==='number') S=Object.assign(S,d);}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+const TOTAL=Q.length+2; // intro + questions + results
+
+/* ================= SPEECH ================= */
+const synth=window.speechSynthesis; let voice=null;
+function pickVoice(){ if(!synth)return; const vs=synth.getVoices(); if(!vs.length)return;
+  const pref=["Google US English","Samantha","Ava","Allison","Susan","Zoe","Nicky","Microsoft Aria","Microsoft Jenny"];
+  for(const n of pref){const v=vs.find(v=>v.name.indexOf(n)===0&&/en[-_]US/i.test(v.lang)); if(v){voice=v;return;}}
+  voice=vs.find(v=>/en[-_]US/i.test(v.lang))||null; }
+if(synth){pickVoice(); synth.onvoiceschanged=pickVoice;}
+function sayable(t){return t.replace(/IUCN/g,'I. U. C. N.').replace(/D\.C\./g,'D C').replace(/aye-aye/g,'eye-eye').replace(/[—–]/g,', ').replace(/[“”]/g,'').replace(/…/g,' ');}
+function say(t){ if(!synth)return; synth.cancel(); setTimeout(()=>{const u=new SpeechSynthesisUtterance(sayable(t)); if(voice)u.voice=voice; u.lang='en-US'; u.rate=0.9; synth.speak(u);},120); }
+
+/* ================= ARTICLE DRAWER ================= */
+const art=document.getElementById('article');
+art.innerHTML=DOC.map(d=>d.h?`<h3>${d.h}</h3>`:`<div class="ap" id="ap-${d.p}">${d.p==='B'?'':`<span class="n">${d.p}</span>`}${d.t}<button class="rd" data-p="${d.p}">🔊 Read</button></div>`).join('');
+art.querySelectorAll('.rd').forEach(b=>b.onclick=()=>{const d=DOC.find(x=>String(x.p)===b.dataset.p); say(d.t);});
+const drawer=document.getElementById('drawer');
+function openArt(ps){
+  drawer.classList.add('show');
+  art.querySelectorAll('.ap').forEach(x=>x.classList.remove('hl'));
+  if(ps&&ps.length){ ps.forEach(p=>{const el=document.getElementById('ap-'+p); if(el)el.classList.add('hl');});
+    const first=document.getElementById('ap-'+ps[0]); if(first) setTimeout(()=>first.scrollIntoView({block:'start',behavior:'smooth'}),60); }
+  else art.scrollTop=0;
+}
+document.getElementById('closeArt').onclick=()=>{drawer.classList.remove('show'); if(synth)synth.cancel();};
+
+/* ================= RENDER ================= */
+const stage=document.getElementById('stage'), L='ABCD';
+function render(){
+  if(synth)synth.cancel();
+  document.getElementById('steps').innerHTML=Array.from({length:TOTAL},(_,i)=>`<i class="${i<S.step?'done':i===S.step?'now':''}"></i>`).join('');
+  const qi=S.step-1;
+  document.getElementById('where').textContent= S.step===0?'Start':S.step>Q.length?'Results':`Question ${qi+1} of ${Q.length}`;
+
+  if(S.step===0){
+    stage.innerHTML=`<div class="card">
+      <h2>Comprehension Check 🔍</h2>
+      <p>You listened to <b>“So What Is a Primate?”</b> Now show what you understood! Answer <b>${Q.length} questions</b> about the article.</p>
+      <div class="tipbox">
+        📖 Tap <b>Look Back</b> on any question to reread the article. The paragraph you need will be highlighted.<br>
+        🔊 Tap <b>Hear it</b> to have the question and choices read aloud.<br>
+        🔗 Some questions come in pairs: <b>Part A</b> asks for an answer, and <b>Part B</b> asks for the evidence that proves it.<br>
+        ⭐ You get <b>one try</b> for each question, so look back before you answer!
+      </div>
+      <div class="nav"><button class="btn sm hear" id="h">🔊 Read to me</button><button class="btn go" id="nx">Start ➜</button></div></div>`;
+    document.getElementById('h').onclick=()=>say(`Comprehension Check. You listened to So What Is a Primate. Now show what you understood! Answer ${Q.length} questions about the article. Tap Look Back on any question to reread the article. The paragraph you need will be highlighted. Tap Hear it to have the question and choices read aloud. Some questions come in pairs. Part A asks for an answer, and Part B asks for the evidence that proves it. You get one try for each question, so look back before you answer!`);
+  }
+  else if(S.step<=Q.length){
+    const q=Q[qi], ans=S.ans[qi], done=ans!==undefined;
+    const prevA = q.part==='B' ? Q[qi-1] : null;
+    const pLabel = q.p.length>1 ? 'paragraphs '+q.p.join(', ') : 'paragraph '+q.p[0];
+    stage.innerHTML=`<div class="card">
+      <div class="tools">
+        <span class="qlab">Question ${qi+1}<span class="skill">${q.skill}</span></span>
+        <span style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn sm look" id="lk">📖 Look Back</button>
+          <button class="btn sm hear" id="hq">🔊 Hear it</button>
+        </span>
+      </div>
+      ${prevA?`<div class="parta">🔗 <b>Part A answer:</b> ${prevA.o[prevA.a]}</div>`:''}
+      <div class="qtext">${q.t}</div>
+      <div class="opts">${q.o.map((o,i)=>{let c=''; if(done){if(i===q.a)c='right'; else if(i===ans)c='wrong';}
+        return `<button class="opt ${c}" data-i="${i}" ${done?'disabled':''}><span class="l">${L[i]}</span><span>${o}</span></button>`;}).join('')}</div>
+      <div class="fb ${done?'show '+(ans===q.a?'good':'bad'):''}" id="fb">${done?fb(q,ans):''}</div>
+      <div class="nav"><button class="btn" id="bk">⬅ Back</button><button class="btn go" id="nx" ${done?'':'disabled'}>${qi===Q.length-1?'See My Score 🏆':'Next ➜'}</button></div>
+    </div>`;
+    document.getElementById('lk').onclick=()=>openArt(q.p);
+    document.getElementById('lk').title='Look back at '+pLabel;
+    document.getElementById('hq').onclick=()=>say((prevA?'Part A answer: '+prevA.o[prevA.a]+'. ':'')+q.t+' '+q.o.map((o,i)=>L[i]+'. '+o).join('. '));
+    if(!done) document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+      const v=+b.dataset.i; S.ans[qi]=v; save();
+      document.querySelectorAll('.opt').forEach(o=>{o.disabled=true; const i=+o.dataset.i; if(i===q.a)o.classList.add('right'); else if(i===v)o.classList.add('wrong');});
+      const f=document.getElementById('fb'); f.className='fb show '+(v===q.a?'good':'bad'); f.innerHTML=fb(q,v);
+      document.getElementById('nx').disabled=false;
+      say((v===q.a?'Correct! ':'Not quite. The answer is '+L[q.a]+'. ')+q.ex);
+      f.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  }
+  else{
+    const right=Q.filter((q,i)=>S.ans[i]===q.a).length, tot=Q.length, pct=right/tot;
+    const stars=pct>=.85?3:pct>=.65?2:1;
+    const msg=stars===3?'Outstanding reading, Explorer! You unlocked this article! 🔑':stars===2?'Nice work! Look over the questions below to sharpen your skills.':'Good effort! Reread the article and check the explanations below.';
+    const missed=Q.map((q,i)=>({q,i})).filter(x=>S.ans[x.i]!==x.q.a);
+    stage.innerHTML=`<div class="card">
+      <h2 style="text-align:center">You finished! 🎉</h2>
+      <div class="stars">${'⭐'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
+      <div class="score">${right} out of ${tot} correct</div>
+      <p style="text-align:center">${msg}</p>
+      ${missed.length?'<h2 style="font-size:1.4rem">Let’s review</h2>'+missed.map(x=>`<div class="miss">${x.i+1}. ${x.q.t}<br>Answer: <b>${x.q.o[x.q.a]}</b><br><span style="color:var(--muted)">${x.q.ex}</span></div>`).join(''):''}
+      <div class="nav"><button class="btn" id="bk">⬅ Back</button><button class="btn go" id="again">↺ Try Again</button></div></div>`;
+    document.getElementById('again').onclick=()=>{S={step:0,ans:{},celebrated:false}; save(); render(); scrollTo(0,0);};
+    if(!S.celebrated){S.celebrated=true; save(); confetti();}
+  }
+  const nx=document.getElementById('nx'), bk=document.getElementById('bk');
+  if(nx) nx.onclick=()=>{S.step++; save(); render(); scrollTo({top:0,behavior:'smooth'});};
+  if(bk) bk.onclick=()=>{S.step--; save(); render(); scrollTo({top:0,behavior:'smooth'});};
+}
+function fb(q,v){return (v===q.a?'<b>✅ Correct!</b> ':'<b>Not quite.</b> The answer is <b>'+L[q.a]+'</b>. ')+q.ex;}
+
+/* ================= CONFETTI ================= */
+function confetti(){
+  const c=document.getElementById('confetti'),x=c.getContext('2d'); c.width=innerWidth; c.height=innerHeight;
+  const cols=['#3f6b3a','#7fb35a','#ffe36b','#b98a55','#2f6db5','#e4572e','#f2a2c0'];
+  const P=Array.from({length:180},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height*.5,w:6+Math.random()*8,h:8+Math.random()*10,vx:-2+Math.random()*4,vy:2+Math.random()*4,r:Math.random()*6,vr:-.2+Math.random()*.4,col:cols[Math.random()*cols.length|0]}));
+  let t=0;(function f(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.04;p.r+=p.vr;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.col;x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore();});if(++t<260)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height);})();
+}
+
+if(S.step<0||S.step>Q.length+1) S.step=0;
+render();
+window.addEventListener('pagehide',()=>{save(); if(synth)synth.cancel();});
+</script>
+</body>
+</html>
